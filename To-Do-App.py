@@ -136,7 +136,8 @@ def main(page: Page):
                     ],
                     ),
                 Container(height=20),  # Space between menu and text
-                Text(value=" Hi Joe !"),  # Greeting text
+                Text(value=" Hi Joe !", size=30),  # Greeting text
+                Container(height=10),
                 Text(value='CATEGORIES'),  # Section title
                 Container(
                     padding=padding.only(top=10, bottom=20),
@@ -166,13 +167,8 @@ def main(page: Page):
             controls=[
                 Row(
                     controls=[
-                        Container(border_radius=25,
-                                  padding=padding.only(top=13, left=13),
-                                  height=50,
-                                  width=50,
-                                  border=border.all(color='white', width=1),
-                                  on_click=lambda e: undo_shrink(e),
-                                  content=Text('<')  # Back button to undo shrink
+                        Container(on_click=lambda e: undo_shrink(e),
+                                  content=Icon(icons.ARROW_BACK_IOS)  # Back button to undo shrink
                                   )
                     ]
                 ),
