@@ -21,6 +21,23 @@ def main(page: Page):
         ]
     )
 
+    def show_search_bar(e):
+        # Toggle the visibility of the search bar
+        search_bar.visible = not search_bar.visible
+        page.update()  # Refresh the UI to reflect the change
+
+    # Create the search bar and assign it to a variable
+    search_bar = SearchBar(
+        width=150,
+        height=50,
+        view_elevation=5,
+        bar_bgcolor=FWG,
+        bar_overlay_color='white',
+        bar_hint_text="task ...",
+        visible=False,  # Initially hidden
+        scale=transform.Scale(0.8)
+
+    )
 
     # Function to shrink the secondary page size when an event occurs
     def shrink(e):
@@ -110,8 +127,10 @@ def main(page: Page):
                                   ),
                         Row(
                             controls=[
-                                Icon(icons.SEARCH),  # Search icon
-                                Icon(icons.NOTIFICATIONS_OUTLINED)  # Notifications icon
+                                Container(on_click=lambda e: show_search_bar(e),
+                                          content=Icon(icons.SEARCH)  # Shrink the secondary page
+                                          ),  # Search icon
+                                search_bar,                                Icon(icons.NOTIFICATIONS_OUTLINED)  # Notifications icon
                             ],
                         ),
                     ],
