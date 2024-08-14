@@ -16,6 +16,17 @@ Tasks App is a daily task management application developed entirely in Python. I
 
 ## Screenshots
 
+<img src="https://github.com/xxPHDEVxx/tasks/blob/master/pic1.png" width='700' height='450'>
+
+<br>
+
+<img src="https://github.com/xxPHDEVxx/tasks/blob/master/pic2.png" width='700' height='450'>
+
+<br>
+
+<img src="https://github.com/xxPHDEVxx/tasks/blob/master/pic3.png" width='700' height='450'>
+
+
 ## Installation
 
 #### 1. Clone the repository
